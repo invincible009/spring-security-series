@@ -3,10 +3,7 @@ package com.shimadove.springsecurityseries.entity;
 import com.shimadove.springsecurityseries.utils.PasswordMatches;
 import com.shimadove.springsecurityseries.utils.ValidEmail;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
@@ -38,6 +35,21 @@ public class UserPojo {
     public UserPojo() {
     }
 
+    public UserPojo(long id, String email, String firstName, String lastName, String password) {
+        this.id = id;
+        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.password = password;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -69,5 +81,16 @@ public class UserPojo {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "UserPojo{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }
