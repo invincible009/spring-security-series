@@ -22,7 +22,7 @@ public class MyUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        UserPojo user = userRepository.findByEmail(email);
+        UserPojo user = userRepository.findByEmail(email).get();
         if (user == null) {
             throw new UsernameNotFoundException("No user found with username: " + email);
         }
@@ -33,7 +33,7 @@ public class MyUserDetailsService implements UserDetailsService {
 
         return new org.springframework.security.core.userdetails.User(
                 user.getEmail(), user.getPassword().toLowerCase(), enabled, accountNonExpired,
-                credentialsNonExpired, accountNonLocked, getAuthorities(user.getRoles()));
+                credentialsNonExpired, accountNonLocked, getAuthorities(null));
     }
 
     private static List<GrantedAuthority> getAuthorities (List<String> roles) {
