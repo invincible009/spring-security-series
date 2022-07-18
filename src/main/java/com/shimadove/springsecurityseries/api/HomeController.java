@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 @Controller
-@RequestMapping("/sdl")
+@RequestMapping("/sdl/home")
 public class HomeController {
 
     private final UserService userService;
