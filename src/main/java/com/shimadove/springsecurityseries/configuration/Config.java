@@ -10,7 +10,7 @@ public class Config {
 
     private UserRepository repository;
     @Bean
-    public MyUserDetailsService userDetailsService(){
+    public MyUserDetailsService userDetailsService1(){
 
         return new MyUserDetailsService(repository);
     }
