@@ -3,8 +3,6 @@ package com.shimadove.springsecurityseries.api;
 import com.shimadove.springsecurityseries.dtos.UserDTO;
 import com.shimadove.springsecurityseries.dtos.UserRegistrationResponseDTO;
 import com.shimadove.springsecurityseries.exception.UserAlreadyExistException;
-import com.shimadove.springsecurityseries.service.impl.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,10 +19,10 @@ import javax.validation.Valid;
 @RequestMapping("/sdl/home")
 public class HomeController {
 
-    private final UserService userService;
+//    private final UserService userService;
 
-    public HomeController(UserService userService) {
-        this.userService = userService;
+    public HomeController() {
+
     }
 
     @GetMapping("/")
@@ -46,16 +44,4 @@ public class HomeController {
         return "/user/login";
     }
 
-    @PostMapping("/register")
-    public ModelAndView registerUserAccount(@ModelAttribute("user") @Valid final UserDTO userDTO,
-                                            HttpServletRequest request, Error error){
-        ModelAndView mav = new ModelAndView();
-        try{
-            UserRegistrationResponseDTO registered = userService.registerNewUserAccount(userDTO);
-        }catch (UserAlreadyExistException existException){
-            mav.addObject("message", "An account for that username/email already exists.");
-            return mav;
-        }
-        return new ModelAndView("successRegister", "user", userDTO);
-    }
 }
