@@ -9,7 +9,7 @@ import java.util.Date;
 @Table(name="USER")
 public class User extends AbstractEntity{
 
-    protected String username;
+    protected String userName;
     protected String firstName;
     protected String lastName;
     protected String email;
@@ -32,12 +32,12 @@ public class User extends AbstractEntity{
     protected boolean enableOtp;
     protected String otpSecret;
 
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getFirstName() {
