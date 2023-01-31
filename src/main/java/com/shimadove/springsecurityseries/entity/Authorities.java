@@ -10,8 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
+@Table(name="AUTHORITIES")
 public class Authorities {
 
     @Id
@@ -19,6 +18,8 @@ public class Authorities {
     private long id;
     private String username;
     private String authority;
+
+
 
     public long getId() {
         return id;
@@ -44,12 +45,4 @@ public class Authorities {
         this.authority = authority;
     }
 
-    @Override
-    public String toString() {
-        return "Authorities{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", authority='" + authority + '\'' +
-                '}';
-    }
 }

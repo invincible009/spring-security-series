@@ -10,8 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
+@Table(name="CUSTOMER")
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -53,14 +52,4 @@ public class Customer {
         this.role = role;
     }
 
-
-    @Override
-    public String toString() {
-        return "Customer{" +
-                "id=" + id +
-                ", email='" + email + '\'' +
-                ", pwd='" + pwd + '\'' +
-                ", role='" + role + '\'' +
-                '}';
-    }
 }
