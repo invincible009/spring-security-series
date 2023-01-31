@@ -17,7 +17,7 @@
     <description>spring-security-series</description>
 
     <properties>
-        <java.version>11</java.version>
+        <java.version>17</java.version>
         <bootstrap.version>4.0.0-2</bootstrap.version>
         <webjars-locator.version>0.30</webjars-locator.version>
         <font-awesome.version>5.11.2</font-awesome.version>
@@ -40,6 +40,12 @@
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
             <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
         </dependency>
 
         <dependency>
