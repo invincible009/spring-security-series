@@ -2,7 +2,6 @@ package com.shimadove.springsecurityseries.enums;
 
 public enum UserType {
     ADMIN("Admin"),
-    BANK("bank"),
     RETAIL("retail"),
     CORPORATE("corporate");
 

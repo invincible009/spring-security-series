@@ -1,6 +1,6 @@
 package com.shimadove.springsecurityseries.security;
 
-import com.shimadove.springsecurityseries.entity.Customer;
+import com.shimadove.springsecurityseries.entity.AdminUser;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,28 +13,28 @@ public class SecurityCustomer  implements UserDetails {
 
     private static final long serialVersionUID = -6690946490872875352L;
 
-    private final Customer customer;
+    private final AdminUser adminUser;
 
-    public SecurityCustomer(Customer customer) {
-        this.customer = customer;
+    public SecurityCustomer(AdminUser adminUser) {
+        this.adminUser = adminUser;
     }
 
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<GrantedAuthority> authorities = new ArrayList<>();
-        authorities.add(new SimpleGrantedAuthority(customer.getRole()));
+        authorities.add(new SimpleGrantedAuthority(adminUser.getRole()));
         return authorities;
     }
 
     @Override
     public String getPassword() {
-        return customer.getPwd();
+        return adminUser.getPwd();
     }
 
     @Override
     public String getUsername() {
-        return customer.getEmail();
+        return adminUser.getEmail();
     }
 
     @Override

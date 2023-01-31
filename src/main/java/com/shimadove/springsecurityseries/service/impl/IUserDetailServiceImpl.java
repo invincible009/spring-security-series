@@ -1,6 +1,6 @@
 package com.shimadove.springsecurityseries.service.impl;
 
-import com.shimadove.springsecurityseries.entity.Customer;
+import com.shimadove.springsecurityseries.entity.AdminUser;
 import com.shimadove.springsecurityseries.repo.CustomerRepository;
 import com.shimadove.springsecurityseries.security.SecurityCustomer;
 import com.shimadove.springsecurityseries.service.IUserDetailService;
@@ -23,10 +23,10 @@ public class IUserDetailServiceImpl implements IUserDetailService, UserDetailsSe
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        List<Customer> customer = custRepository.findByEmail(username);
-        if(customer.size() == 0 ){
+        List<AdminUser> adminUser = custRepository.findByEmail(username);
+        if(adminUser.size() == 0 ){
             throw new UsernameNotFoundException("user details not found for the user : "+ username);
         }
-        return new SecurityCustomer(customer.get(0));
+        return new SecurityCustomer(adminUser.get(0));
     }
 }
