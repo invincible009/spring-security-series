@@ -146,7 +146,6 @@ public class UserGroup extends AbstractEntity implements PrettySerializer {
                 ", description='" + description + '\'' +
                 ", dateCreated=" + dateCreated +
                 ", users=" + users +
-                ", bankUsers=" + bankUsers +
                 ", contacts=" + contacts +
                 ", custSeg=" + custSeg +
                 '}';
