@@ -3,7 +3,7 @@ Spring security project bases
 
 Spring Security is a framework that allows you to build application-level security, not only a dependency you add such that your applications become magically secured. You have to know where, what and why to apply from Spring Security so protected your Spring applications.
 
-## Best practice in this series are taken from a Spring Security in Action by Laurentiu Splica
+## Best practice in this Series are taken from the Book (Spring Security in Action) by Laurentiu Splica
 
 ### Part 1 First Steps
 - Security Today
@@ -23,3 +23,8 @@ Spring Security is a framework that allows you to build application-level securi
 - Global Method security: Pre and PostFiltering
 - Spring security for Reactive apps
 - Spring security testing
+
+
+### Below is a link to read about lessons from the book and key take away
+
+
