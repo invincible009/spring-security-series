@@ -28,3 +28,6 @@ Spring Security is a framework that allows you to build application-level securi
 ### Below is a link to read about lessons from the book and key take away
 
 
+### Here is also a link to the book.
+
+
